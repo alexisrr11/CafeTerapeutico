@@ -13,7 +13,58 @@
     observer.observe(target);
 });
 
-// Función para obtener estación actual
+// Seleccionamos el modal y el párrafo donde irá el mensaje
+    const modal = document.getElementById('modalOferta');
+    const mensaje = document.getElementById('mensajeOferta');
+    const cuentaRegresiva = document.getElementById('cuentaRegresiva');
+    const cerrarBtn = document.getElementById('cerrarModal');
+
+    // Mensaje de la promoción
+    const promocion = "20 de septiembre 16:00hs, Promoción exclusiva por $12000 ¡Te espero!";
+    mensaje.textContent = promocion;
+
+    // Fecha límite de la promoción
+    const fechaPromocion = new Date("2025-09-20T16:00:00");
+
+    // Mostramos el modal si la fecha aún no pasó
+    const ahora = new Date();
+    if (ahora < fechaPromocion) {
+        modal.classList.remove('hidden');
+    }
+
+    // Función para cerrar el modal
+    cerrarBtn.addEventListener('click', () => {
+        modal.classList.add('hidden');
+    });
+
+    // Cerrar si se hace click fuera del contenido
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.add('hidden');
+        }
+    });
+
+    // Actualizar la cuenta regresiva cada segundo
+    const intervalo = setInterval(() => {
+        const ahora = new Date();
+        const diferencia = fechaPromocion - ahora;
+
+        if (diferencia <= 0) {
+            // La promoción terminó, ocultamos el modal y detenemos el intervalo
+            modal.classList.add('hidden');
+            clearInterval(intervalo);
+            return;
+        }
+
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+        cuentaRegresiva.textContent = `Faltan: ${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    }, 1000);
+
+/*/ Función para obtener estación actual
   function obtenerEstacion() {
     const mes = new Date().getMonth() + 1; // Enero = 0
     if (mes >= 3 && mes <= 5) return "Primavera";
@@ -46,4 +97,4 @@
     modal.addEventListener("click", (e) => {
       if (e.target === modal) modal.classList.add("hidden");
     });
-  });
+  });*/

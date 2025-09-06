@@ -15,7 +15,7 @@
     </style>
 </head>
 
-<body id="inicio" class="bg-beige-50 font-sans text-gray-800">
+<body id="inicio" class="bg-yellow-50 font-sans text-gray-800">
     <!-- Hero -->
     <section
         class="h-screen flex items-start justify-center bg-[url('https://images.unsplash.com/photo-1509042239860-f550ce710b93')] bg-cover bg-center bg-fixed relative">
@@ -27,7 +27,7 @@
                 class="bg-amber-600 hover:bg-amber-700 px-6 py-3 rounded-xl text-lg font-semibold shadow-md">Ver
                 info</a>
             <a href="https://wa.me/5491163069714?text=Hola!%20Estoy%20interasado/a%20para%20una%20seccion%20contigo"
-                target="_blank" class="fixed right-5 bottom-5 text-4xl">
+                target="_blank" class="fixed right-5 bottom-5 text-4xl z-50">
                 <i class='bg-green-500 rounded-full p-2 bx bxl-whatsapp'></i>
             </a>
         </div>
@@ -41,7 +41,7 @@
             id="sobreMiAnimado">
             <img src="./images/lard.jpg" alt="Terapeuta" class="rounded-2xl shadow-md h-[70vh] m-auto">
             <p class="mt-6 md:mt-0 text-lg leading-relaxed">
-                Soy <span class="font-semibold">[Nombre de la terapeuta]</span>, creadora de Café Terapéutico.
+                Soy <span class="font-semibold">Manuela</span>, creadora de Café Terapéutico.
                 Acompaño a las personas en su proceso de autoconocimiento, gestión emocional y búsqueda de bienestar.
                 Mi espacio está diseñado para que te sientas escuchado y acompañado en un ambiente de confianza.
             </p>
@@ -49,39 +49,43 @@
     </section>
 
     <!-- Servicios -->
-    <section id="servicios" class="bg-amber-50 py-20 px-6">
-        <h3 class="text-3xl font-bold text-center mb-10 text-amber-700">Servicios</h3>
-        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-                <h4 class="text-xl font-semibold mb-2">Terapia Individual</h4>
-                <p>Sesiones personalizadas para trabajar emociones, ansiedad y autoconfianza.</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-                <h4 class="text-xl font-semibold mb-2">Terapia de Pareja</h4>
-                <p>Un espacio seguro para mejorar la comunicación y fortalecer vínculos.</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-                <h4 class="text-xl font-semibold mb-2">Café Terapéutico</h4>
-                <p>Encuentros grupales para compartir experiencias y encontrar apoyo mutuo.</p>
+    <section id="servicios" class="relative bg-[url('./images/casa.jpg')] bg-cover bg-center py-20 px-6">
+        <!-- Overlay negro semitransparente -->
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-center mb-10 text-amber-700">Servicios</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-yellow-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h4 class="text-xl font-semibold mb-2">Terapia Individual</h4>
+                    <p>Sesiones personalizadas para trabajar emociones, adicción y suicidio</p>
+                </div>
+                <div class="bg-yellow-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+                    <h4 class="text-xl font-semibold mb-2">Café Terapéutico</h4>
+                    <p>Encuentros grupales para compartir experiencias y encontrar apoyo mutuo.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Modal -->
     <div id="modalOferta" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-2xl shadow-lg max-w-xs w-full p-6 text-center relative">
+        <div class="bg-white rounded-2xl shadow-lg max-w-xs w-full p-5 text-center relative">
             <button id="cerrarModal"
                 class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 font-bold">✕</button>
-            <h2 class="text-2xl font-bold mb-4 text-amber-700">Promoción Especial</h2>
-            <p id="mensajeOferta" class="text-lg mb-6"></p>
-            <button class="hidden bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-xl shadow-md">Reservar
-                Ahora</button>
+            <h2 class="text-2xl font-bold mb-3 text-amber-700">Promoción Especial</h2>
+            <p id="mensajeOferta" class="text-lg mb-3"></p>
+            <p id="cuentaRegresiva" class="text-lg font-semibold text-amber-700 mb-3"></p>
+            <a href="https://wa.me/5491112345678?text=Hola!%20Estoy%20interasado/a%20para%20una%20seccion%20contigo"
+                class="block bg-yellow-900 hover:bg-yellow-800 text-white px-4 py-2 rounded-xl shadow-md mt-1">Reservar
+                Ahora</a>
         </div>
     </div>
 
 
+
     <!-- Footer -->
-    <footer class="bg-black/90 text-white mt-20">
+    <footer class="bg-black/90 text-white">
         <!-- Parte superior -->
         <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10 text-center md:text-left">
 
@@ -109,7 +113,7 @@
             <!-- Contacto -->
             <div>
                 <h3 class="text-lg font-semibold mb-4">Contacto</h3>
-                <p>📍 Buenos Aires, Argentina</p>
+                <p>📍 Claypole, Buenos Aires</p>
                 <p>📱 +54 9 11 6306-9714</p>
             </div>
         </div>
@@ -121,6 +125,5 @@
     </footer>
 
 </body>
-
 
 </html>
