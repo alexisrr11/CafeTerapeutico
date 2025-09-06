@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Café Terapéutico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./index.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body id="inicio" class="bg-beige-50 font-sans text-gray-800">
+    <!-- Hero -->
+    <section
+        class="h-screen flex items-start justify-center bg-[url('https://images.unsplash.com/photo-1509042239860-f550ce710b93')] bg-cover bg-center bg-fixed relative">
+        <div class="bg-black/50 absolute inset-0"></div>
+        <div class="relative text-center text-white px-6 pt-32 md:pt-48">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4">Café Terapéutico</h2>
+            <p class="text-lg md:text-2xl mb-6">Hablemos de la soledad: conversaciones que sanan</p>
+            <a href="#servicios"
+                class="bg-amber-600 hover:bg-amber-700 px-6 py-3 rounded-xl text-lg font-semibold shadow-md">Ver
+                info</a>
+            <a href="https://wa.me/5491112345678?text=Hola!%20Estoy%20interasado/a%20para%20una%20seccion%20contigo"
+                target="_blank" class="fixed right-5 bottom-5 text-4xl">
+                <i class='bg-green-500 rounded-full p-2 bx bxl-whatsapp'></i>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Sobre mí -->
+    <section id="sobre-mi" class="max-w-6xl mx-auto px-6 py-20">
+        <h3 class="text-3xl font-bold text-center mb-10 text-amber-700">Sobre mí</h3>
+        <div class="md:flex items-center gap-10 opacity-0 translate-y-12 transition-all duration-1000 ease-out"
+            id="sobreMiAnimado">
+            <img src="./images/lard.jpg" alt="Terapeuta" class="rounded-2xl shadow-md h-[70vh] m-auto">
+            <p class="mt-6 md:mt-0 text-lg leading-relaxed">
+                Soy <span class="font-semibold">[Nombre de la terapeuta]</span>, creadora de Café Terapéutico.
+                Acompaño a las personas en su proceso de autoconocimiento, gestión emocional y búsqueda de bienestar.
+                Mi espacio está diseñado para que te sientas escuchado y acompañado en un ambiente de confianza.
+            </p>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="bg-amber-50 py-20 px-6">
+        <h3 class="text-3xl font-bold text-center mb-10 text-amber-700">Servicios</h3>
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+                <h4 class="text-xl font-semibold mb-2">Terapia Individual</h4>
+                <p>Sesiones personalizadas para trabajar emociones, ansiedad y autoconfianza.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+                <h4 class="text-xl font-semibold mb-2">Terapia de Pareja</h4>
+                <p>Un espacio seguro para mejorar la comunicación y fortalecer vínculos.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+                <h4 class="text-xl font-semibold mb-2">Café Terapéutico</h4>
+                <p>Encuentros grupales para compartir experiencias y encontrar apoyo mutuo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modalOferta" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-lg max-w-xs w-full p-6 text-center relative">
+            <button id="cerrarModal"
+                class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 font-bold">✕</button>
+            <h2 class="text-2xl font-bold mb-4 text-amber-700">Promoción Especial</h2>
+            <p id="mensajeOferta" class="text-lg mb-6"></p>
+            <button class="hidden bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-xl shadow-md">Reservar
+                Ahora</button>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-black/90 text-white mt-20">
+        <!-- Parte superior -->
+        <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10 text-center md:text-left">
+
+            <!-- Logo / Nombre -->
+            <div>
+                <h2 class="text-2xl font-bold flex items-center justify-center md:justify-start gap-2">
+                    ☕ Café Terapéutico
+                </h2>
+                <p class="mt-4 text-sm">
+                    Un espacio cálido para tu bienestar emocional.
+                    Encuentra calma, claridad y apoyo en cada encuentro.
+                </p>
+            </div>
+
+            <!-- Links rápidos -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Enlaces</h3>
+                <ul class="space-y-2">
+                    <li><a href="#inicio" class="hover:underline">Inicio</a></li>
+                    <li><a href="#sobre-mi" class="hover:underline">Sobre mí</a></li>
+                    <li><a href="#servicios" class="hover:underline">Servicios</a></li>
+                </ul>
+            </div>
+
+            <!-- Contacto -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Contacto</h3>
+                <p>📍 Buenos Aires, Argentina</p>
+                <p>📱 +54 9 11 6306-9714</p>
+            </div>
+        </div>
+
+        <!-- Franja inferior -->
+        <div class="bg-black/50 py-4 text-center text-sm">
+            <p>© 2025 Café Terapéutico · Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
